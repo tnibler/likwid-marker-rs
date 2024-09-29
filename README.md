@@ -3,6 +3,13 @@
 This library allows controlling [LIKWID](https://hpc.fau.de/research/tools/likwid/) performance monitoring
 through its [Marker API](https://github.com/RRZE-HPC/likwid/wiki/TutorialMarkerC).
 
+## Building
+
+If the LIKWID library (`liblikwid.so`) is not where your system normally searches for dynamic libraries,
+set the `LIKWID_LIB_DIR` environment variable to the path containing the `likwid` library.
+
+You can run `cargo test` in this repo to check if linking to `liblikwid` is working.
+
 ### Documentation
 
 This crate just provides bindings for a handful of functions, refer to LIKWID documentation on how they work.
