@@ -177,3 +177,8 @@ pub fn pin_thread(processor_id: i32) -> Result<(), i32> {
         }
     }
 }
+
+#[test]
+fn call_likwid_fn() {
+    init();
+}
