@@ -8,7 +8,7 @@ description = "Bindings for the LIKWID marker API"
 repository = "https://github.com/tnibler/likwid-marker-rs"
 homepage = "https://github.com/tnibler/likwid-marker-rs"
 categories = ["development-tools::profiling"]
-keywords = ["likwid", "profiling", "perf", "performance counter"]
+keywords = ["likwid", "profiling", "perf"]
 readme = "README.md"
 
 [dependencies]
