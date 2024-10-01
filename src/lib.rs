@@ -5,6 +5,7 @@
 
 use std::ffi::{c_char, CStr};
 
+#[cfg(feature = "enable")]
 extern "C" {
     fn likwid_markerInit();
     fn likwid_markerThreadInit();
@@ -59,6 +60,8 @@ pub fn write_file(marker_file: &CStr) -> Result<(), i32> {
             err => Err(err),
         }
     }
+    #[cfg(not(feature = "enable"))]
+    Ok(())
 }
 
 /// Initialize LIKWID's marker API for the current thread
@@ -84,6 +87,8 @@ pub fn register_region(tag: &CStr) -> Result<(), i32> {
             err => Err(err),
         }
     }
+    #[cfg(not(feature = "enable"))]
+    Ok(())
 }
 
 /// Start a measurement region
@@ -103,6 +108,8 @@ pub fn start_region(tag: &CStr) -> Result<(), i32> {
             err => Err(err),
         }
     }
+    #[cfg(not(feature = "enable"))]
+    Ok(())
 }
 
 /// Stop a measurement region
@@ -123,6 +130,8 @@ pub fn stop_region(tag: &CStr) -> Result<(), i32> {
             err => Err(err),
         }
     }
+    #[cfg(not(feature = "enable"))]
+    Ok(())
 }
 
 /// Reset a measurement region
@@ -136,6 +145,8 @@ pub fn reset_region(tag: &CStr) -> Result<(), i32> {
             err => Err(err),
         }
     }
+    #[cfg(not(feature = "enable"))]
+    Ok(())
 }
 
 /// Switch to next group to measure
@@ -163,6 +174,8 @@ pub fn pin_process(processor_id: i32) -> Result<(), i32> {
             err => Err(err),
         }
     }
+    #[cfg(not(feature = "enable"))]
+    Ok(())
 }
 
 /// Pin the current thread to the given CPU ID. The thread cannot be scheduled to
@@ -176,6 +189,8 @@ pub fn pin_thread(processor_id: i32) -> Result<(), i32> {
             err => Err(err),
         }
     }
+    #[cfg(not(feature = "enable"))]
+    Ok(())
 }
 
 #[test]
